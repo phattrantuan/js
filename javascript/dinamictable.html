@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="uft-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function CreateTable()
+	{
+		var row = document.getElementById("row");
+		var column = document.getElementById("column");
+		var submit = document.getElementById("containers");
+		
+		getrow = parseInt(row.value);
+		getcolumn = parseInt(column.value);//kieu doi tuong nen chuyen sang part
+		
+		var tagTable = document.createElement("table");
+		tagTable.border = 1;
+		
+		
+		for( i = 0 ; i < getrow ; i++)
+			{
+				var tagtr = document.createElement("tr");
+				tagTable.appendChild(tagtr);
+				for( j = 0 ; j < getcolumn ; j++)
+					{
+					var tagtd = document.createElement("td");
+					tagTable.appendChild(tagtd);
+					var textnode = document.createTextNode(i+""+j);
+					tagtd.appendChild(textnode);
+					tagtr.appendChild(tagtd);
+					
+					}
+			}
+		
+		submit.appendChild(tagTable);
+	}
+</script>
+</head>
+<body>
+<section>
+<div>
+<p>row numbers :</p>
+	<input type="text" id="row">
+</div>
+
+<div>
+<p>column number :</p>
+	<input type="text" id="column">
+</div>
+<br>
+	<input type="button" id="create" value="submit" onclick="CreateTable()">
+	
+	<div id="containers"> </div>
+</section>
+</body>
+</html>

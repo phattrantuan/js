@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function checkinput(giatri)
+	{
+		if(giatri == 8)
+			{
+				alert("so tam");
+			}
+		else {
+			alert("not 8");
+		}
+	}
+	
+	
+	
+	function xethocluchocsinh(dtb)
+	{ var thongbao ="";
+		switch(dtb){
+		case 9:
+			thongbao =  "Hoc luc ok"; break;
+		case 8:
+			
+		thongbao =	"Hoc luc it ok"; break; 
+		
+		default: 
+		thongbao = "tui khong biet"; break;
+		} 
+		
+		
+		alert(thongbao);
+	}
+	
+	function xuat10cau()
+	{
+		document.write("test nha may cau");
+		document.write("test nha may cau");
+		document.write("test nha may cau");
+		document.write("test nha may cau");
+		document.write("test nha may cau");
+		
+	}
+	
+	
+</script>
+</head>
+<body>
+	
+	<input type="button" value="click vao day" onclick="checkinput(9)"/>
+	<!-- onclick nhận 1 hàm --> 
+		<input type="button" value="click vao day 2" onclick="xethocluchocsinh(8)"/>
+	<!-- onclick nhận 1 hàm --> 
+			<input type="button" value="click vao day 3" onclick="xuat10cau()"/>
+	<!-- onclick nhận 1 hàm --> 
+</body>
+</html>

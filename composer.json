@@ -1,0 +1,11 @@
+{
+	"autoload" : {
+		"psr-4" : {
+			"Prepare\\Jquery_1\\" : "src"
+		}
+	},
+	"name" : "prepare/jquery_1",
+	"require" : {
+		"php" : ">=7.1"
+	}
+}

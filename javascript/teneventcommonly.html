@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+<script type="text/javascript">
+	function changecolor(choose)
+	{var txt = 	document.getElementById("of");
+		if(choose == 1){// la focus
+	//lấy thẻ thông qua id của thẻ dó
+		//lấy đối tượng rồi truy xuất
+		txt.style.border = "solid 4px red";
+			
+		}
+		else {//onblur
+			txt.style.border = "solid 1px orange";
+		}
+	}
+	
+	function thayDoiChon(){
+		var tagP = document.getElementById("prints");
+		var dropdown = document.getElementById("pick");
+		tagP.innerHTML = dropdown.value;
+		//innerHTML gía trị xuất ra ngoài cua thẻ
+		
+	}
+	
+	function changeColorButton(thamso)
+	{
+		var nut = document.getElementById("nut");
+		if(thamso ==1 ) // hover
+		{
+			nut.style.backgroundColor = "red";
+		}
+		else if(thamso == 2)//out
+		{
+			nut.style.backgroundColor = "white";
+		}
+		else if(thamso == 3)//down 
+		{
+			nut.style.backgroundColor = "green";
+		}
+		else //up
+		{
+			nut.style.backgroundColor = "yellow";
+		}
+	}
+		
+	function layGiaTri(){
+		var theP = document.getElementById("content"); 
+		
+		theP.innerHTML = "Chao tat ca cac ban"; 
+		theP.style.color = "red";
+	}
+	function layGiaTri2(){
+		var theP = document.getElementById("content").innerHTML = "Chao tat ca cac ban"; 
+		
+		
+		document.getElementById("content").style.color = "red";
+	}
+	
+	
+	
+	function layGiaTritagp2(){
+		var tatcaP = document.getElementsByTagName("p");
+		alert("So the P" + tatcaP.length + " noi dung cua the p:"+
+				tatcaP[3].innerHTML);
+	}
+	
+	
+	
+	
+	function classname(){
+		var tatcaP = document.getElementsByClassName("demo");
+		alert("So the P" + tatcaP.length + " noi dung cua the p:"+
+				tatcaP[0].innerHTML);
+	}
+	
+	
+	
+</script>
+<p id="prints"> </p>
+<input type="text" value="" id="of" onfocus="changecolor(1)" onblur="changecolor(2)">
+<select id="pick" onchange="thayDoiChon()">
+	<option>VietNam</option>
+	<option>Lao</option>
+	<option>Cam</option>
+</select>
+<input type="button" id="nut" value="mouse" onmouseover="changeColorButton(1)" onmouseout="changeColorButton(2)"  onmouseup="changeColorButton(4)" onmousedown="changeColorButton(3)"/>
+<!-- button la an value bent rong con` inpput type button la ben ngaoi -->
+
+<p id="content"></p>
+<input type="button" value="getElementsById" id="getvalue" onclick="layGiaTri2()">
+
+
+
+
+
+<p class="demo">the p1</p>
+
+
+
+<p>the p2</p>
+<p class="demo">the p3</p>
+
+
+
+<input type="button" value="getElementsByTagName" id="Bytagname" onclick="layGiaTritagp2()">
+
+
+<input type="button" value="getElementsByClassName" id="Byclassname" onclick="classname()">
+
+
+
+
+
+
+
+
+
+</body>
+</html>

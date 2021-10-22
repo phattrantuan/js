@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="" name="form1">
+name: <input type="text" name="username" id="text1">
+<br>
+<input type="submit" value="checkinput" onclick="return ktnhap()">
+<input type="submit" value="checkletter" onclick="return checkletter()">
+<input type="submit" value="checkletter" onclick="return checknumber()">
+<input type="submit" value="checkletter" onclick="return checkemail()">
+ 
+ 
+<script type="text/javascript">
+function ktnhap(){
+	
+
+//var inputTen = document.forms["form1"]["username"];
+	var inputTen = document.form1.username;
+	var valuename = inputTen.value;
+	var error = document.getElementById("error");
+	if(valuename == "")
+		{
+		//alert("ban chua nhap");
+		error.style.display = "block";
+		error.innerHTML = "hay nhap vao gia tri";
+		error.style.color = "red";
+		return false;//
+		}
+	else {
+		alert("oke");
+		return true;
+	}}
+	
+	function checkletter()
+	{
+		
+		var inputTag = document.getElementById("text1");
+		var letters = /^[A-Za-z]+$/;
+		var error = document.getElementById("error");
+		if(inputTag.value.match(letters)){
+			error.style.display = "none";
+			error.innerHTML = " all letters";
+			return true;
+		}else {
+			error.style.display = "block";
+			error.innerHTML = "please all letters";
+			error.style.color = "red";
+			return false;
+		}
+	}
+		function checknumber()
+		{
+			
+			var inputTag = document.getElementById("text1");
+			var letters = /^[0-9]+$/;
+			var error = document.getElementById("error");
+			if(inputTag.value.match(letters)){
+				error.style.display = "none";
+				error.innerHTML = " all numbers";
+				return true;
+			}else {
+				error.style.display = "block";
+				error.innerHTML = "please all numbers";
+				error.style.color = "red";
+				document.write("myclass.vn@gmail.com");
+				return false;
+			}}
+			
+			
+			function checkemail()
+			{
+				
+				var inputTag = document.getElementById("text1");
+				var letters = /^([\w\.])+@([a-zA-Z0-9)-])+\.([a-zA-Z]{2,4})(\.[a-zA-Z]{2,4})?$/;
+				var error = document.getElementById("error");
+				if(inputTag.value.match(letters)){
+					error.style.display = "none";
+				
+					return true;
+				}else {
+					error.style.display = "block";
+					error.innerHTML = "email khong hop le";
+					error.style.color = "red";
+					
+					return false;
+				}
+		
+	}
+	
+	
+	
+</script>
+
+</form>
+<p id="error"></p>
+</body>
+</html>
